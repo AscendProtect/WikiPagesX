@@ -1,52 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WikiX WikiPagesX Editor</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>WebPageX Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>WikiX WikiPagesX Editor</h1>
+        <h1>WebPageX Editor</h1>
     </header>
     <section id="editor-section">
-        <!-- Text input area -->
         <textarea id="editor"></textarea>
-
-        <!-- Font selection dropdown -->
         <label for="fontSelect">Select Font:</label>
         <select id="fontSelect">
             <!-- Populate this dropdown with font options -->
         </select>
-
-        <!-- Font size selection dropdown -->
-        <label for="fontSizeSelect">Select Font Size:</label>
-        <select id="fontSizeSelect">
-            <!-- Populate this dropdown with font size options -->
-        </select>
-
-        <!-- Color selection input -->
-        <label for="colorPicker">Select Color:</label>
-        <input type="color" id="colorPicker">
-
-        <!-- Image insertion -->
-        <input type="file" id="imageUploader" accept="image/*">
-
-        <!-- Video insertion -->
-        <input type="file" id="videoUploader" accept="video/*">
+        <!-- ... (other input elements) ... -->
     </section>
     <section id="preview-section">
-        <!-- Preview area -->
         <div id="preview"></div>
-
-        <!-- Export button -->
         <button id="exportButton">Export HTML</button>
     </section>
-    
-    <!-- Menu -->
     <div id="menu">
         <!-- Menu items go here -->
     </div>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
