@@ -2,8 +2,40 @@
 <html>
 <head>
     <title>WebPageX Editor</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <style>
+        /* CSS styles for the editor and menu */
+        body {
+            background-color: #f5edf0; /* Light pink */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #ff4d6d; /* Pink */
+            color: #fff; /* White */
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Text input area styles */
+        #editor {
+            width: 100%;
+            height: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #d7a8b9; /* Light purple */
+            background-color: #fff; /* White */
+        }
+
+        /* Font selection dropdown styles */
+        #fontSelect {
+            font-size: 16px;
+            background-color: #fff; /* White */
+            color: #8b508e; /* Dark purple */
+        }
+
+        /* ... (other CSS styles) ... */
+    </style>
 </head>
 <body>
     <header>
@@ -14,6 +46,10 @@
         <label for="fontSelect">Select Font:</label>
         <select id="fontSelect">
             <!-- Populate this dropdown with font options -->
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Verdana, sans-serif">Verdana</option>
+            <option value="Georgia, serif">Georgia</option>
+            <!-- Add more font options as needed -->
         </select>
         <!-- ... (other input elements) ... -->
     </section>
@@ -24,5 +60,31 @@
     <div id="menu">
         <!-- Menu items go here -->
     </div>
+    <script>
+        // JavaScript code for handling the editor functionality
+        document.addEventListener("keydown", (event) => {
+            if (event.shiftKey && event.key === "/") {
+                const menu = document.getElementById("menu");
+                menu.style.display = menu.style.display === "block" ? "none" : "block";
+            }
+        });
+
+        const fontSelect = document.getElementById("fontSelect");
+        const preview = document.getElementById("preview");
+        const exportButton = document.getElementById("exportButton");
+        const editor = document.getElementById("editor");
+
+        fontSelect.addEventListener("change", () => {
+            const selectedFont = fontSelect.value;
+            preview.style.fontFamily = selectedFont;
+        });
+
+        exportButton.addEventListener("click", () => {
+            const htmlContent = editor.value;
+            preview.innerHTML = htmlContent;
+        });
+
+        menu.style.display = "none";
+    </script>
 </body>
 </html>
